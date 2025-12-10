@@ -1,0 +1,14 @@
+{
+  "name": "tts-build",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "terser": "^5.20.2",
+    "javascript-obfuscator": "^4.0.3"
+  },
+  "scripts": {
+    "build:min": "terser src/app.js -o dist/app.min.js --compress --mangle",
+    "build:obf": "javascript-obfuscator dist/app.min.js --output dist/app.obf.js --compact true --control-flow-flattening true --string-array true --rotate-string-array true",
+    "build": "npm run build:min && npm run build:obf"
+  }
+}

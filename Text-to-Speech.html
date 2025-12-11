@@ -319,8 +319,8 @@
         </div>
     </div>
 
-    <!-- load the obfuscated/minified bundle -->
-    <script src="dist/app.obf.js"></script>
+    <!-- load the obfuscated/minified bundle; fall back to the source during development -->
+    <script src="dist/app.obf.js" onerror="(function(){var s=document.createElement('script');s.src='src/app.js';document.body.appendChild(s);console.warn('dist/app.obf.js failed to load — falling back to src/app.js');})();"></script>
 </body>
 </html>
 
